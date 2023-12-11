@@ -1,7 +1,7 @@
 const catImg = document.getElementById('catImage');
 const loaCAT = document.getElementById('learn-more');
 
-const URL_CAT = 'https://api.thecatapi.com/v1/images/search';
+const URL_CAT = 'https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_aVLTVFxpeWZda0Xxs5fxwCZybDCzz7JDGkSm6Xn8FXVsaK022oSaYxiSDbF4ZspS';
 
 const loaCATimages = () => {
     fetch(URL_CAT)
