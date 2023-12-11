@@ -1,7 +1,7 @@
 const catImg = document.getElementById('catImage');
 const loaCAT = document.getElementById('learn-more');
 
-const URL_CAT = 'https://random.dog/woof.json';
+const URL_CAT = 'https://api.thecatapi.com/v1/images/search';
 
 const loaCATimages = () => {
     fetch(URL_CAT)
@@ -9,10 +9,11 @@ const loaCATimages = () => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            return response.blob();
+            return response.json();
         })
-        .then(blob => {
-            const imageURL = URL.createObjectURL(blob);
+        .then(data => {
+            const catData = data[0]; // The response is an array, we take the first item
+            const imageURL = catData.url;
             console.log(imageURL);
             catImg.src = imageURL;
         })
