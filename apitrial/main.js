@@ -1,7 +1,7 @@
 const catImg = document.getElementById('catImage');
 const loaCAT = document.getElementById('learn-more');
 
-const URL_CAT = 'https://cataas.com/cat';
+const URL_CAT = 'https://api.thecatapi.com/v1/images/search';
 
 const loaCATimages = () => {
     fetch(URL_CAT)
